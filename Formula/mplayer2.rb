@@ -98,7 +98,7 @@ class Mplayer2 < Formula
     args << "--enable-macosx-finder" if bundle?
     args << "--disable-x11" unless x11?
 
-    GitVersionWriter.new(@downloader).write
+    GitVersionWriter.new(@active_spec.downloader).write
     system "./configure", *args
     system "make install"
 
